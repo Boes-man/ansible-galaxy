@@ -29,6 +29,7 @@
 
 - name: "Setup and configure AGENT nodes"
   hosts: agents
+  serial: 1
   become: true
   tasks:
     - include_role:

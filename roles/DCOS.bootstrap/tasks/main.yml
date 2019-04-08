@@ -127,7 +127,7 @@
   loop: >
     {{ groups['dcos'] | default([]) | map('extract',hostvars,'ansible_local')| list |
      select('defined') | selectattr('dcos_installation', 'defined') |
-     map(attribute='dcos_installation') | map(attribute='version') | list |
+    map(attribute='dcos_installation') | map(attribute='version') | list |
      union([dcos['version_to_upgrade_from'] | default(dcos['version']) ]) | unique }}
 
 - name: Get upgrade directory hash
